@@ -101,4 +101,20 @@ public class Auction
             return null;
         }
     }
+    
+    public void close()
+    {
+        for(Lot item : lots)
+        { 
+            System.out.println(item.toString());
+            if(item.getHighestBid() == null)
+            {
+                System.out.println("este articulo aun na ha recibido ninguna puja");
+            }
+            else
+            {
+                System.out.println("la persona que ha hecho la puja mas alta es " + item.getHighestBid().getBidder().getName());
+            }
+        }
+    }
 }
