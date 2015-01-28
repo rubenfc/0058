@@ -117,4 +117,17 @@ public class Auction
             }
         }
     }
+    
+    public ArrayList getUnsold()
+    {
+        ArrayList<Lot> sinPuja = new ArrayList<>();
+        for(Lot item : lots)
+        { 
+            if(item.getHighestBid() == null)
+            {
+                sinPuja.add(item);
+            }    
+        }
+        return sinPuja;
+    }
 }
